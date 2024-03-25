@@ -14,10 +14,6 @@ We create a custom style targetting the DataGridRow in the Resource Dictionary.
 </ContentPage.Resources>
 ```
 
-Then we set the key value to the CellStyle property of the particular column we want to customize.
-```XML
-    <syncfusion:SfDataGrid ItemsSource="{Binding Employees}" CellTapped="SfDataGrid_CellTapped" />
-```
 ## C#
 
 In the cell tapped event we will modify the bool value, which will trigger the converter.
