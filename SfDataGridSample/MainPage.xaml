@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:SfDataGridSample"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.DataGrid;assembly=Syncfusion.Maui.DataGrid"
+             x:Class="SfDataGridSample.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:EmployeeViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <local:ColorConverter x:Key="converter"/>
+        <Style TargetType="syncfusion:DataGridRow">
+            <Setter Property="Background" Value="{Binding EmployeeStatus, Converter={StaticResource Key=converter}}"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <syncfusion:SfDataGrid ItemsSource="{Binding Employees}"
+                           CellTapped="SfDataGrid_CellTapped" 
+                           GridLinesVisibility="Both" 
+                           HeaderGridLinesVisibility="Both">
+        <syncfusion:SfDataGrid.Columns>
+            <syncfusion:DataGridNumericColumn MappingName="EmployeeID" Format="d"
+                                              HeaderText="Employee ID" ColumnWidthMode="Auto"/>
+            <syncfusion:DataGridTextColumn MappingName="Name" HeaderText="Name" ColumnWidthMode="Auto"/>
+            <syncfusion:DataGridCheckBoxColumn MappingName="EmployeeStatus" HeaderText="Status"/>
+        </syncfusion:SfDataGrid.Columns>
+    </syncfusion:SfDataGrid>
+
+</ContentPage>
