@@ -2,7 +2,7 @@
 
 The [.NET MAUI DataGrid](https://www.syncfusion.com/maui-controls/maui-datagrid) provides support to customize the background of a [DataGridRow](https://help.syncfusion.com/cr/maui/Syncfusion.Maui.DataGrid.DataGridRow.html) based on a bool value.
 
-## XAML
+##### XAML
 We create a custom style targetting the DataGridRow in the Resource Dictionary.
 
 ```XML
@@ -14,7 +14,7 @@ We create a custom style targetting the DataGridRow in the Resource Dictionary.
 </ContentPage.Resources>
 ```
 
-## C#
+##### C#
 
 In the cell tapped event we will modify the bool value, which will trigger the converter.
 ```C#
